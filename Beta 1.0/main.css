@@ -1,0 +1,14 @@
+body
+{
+	background-color: white;
+}
+#game
+{
+	background-color: grey;
+	width: 1000px;
+	height: 640px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
