@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Quit Menu</title>
+		<meta charset="utf-8">
+	</head>
+	<style>
+	#resolution {background-color: grey; width: 1000px; height: 640px;margin-left: auto; margin-right: auto;}
+	body {background-color: white;}
+	h1{text-align: center; font-size: 97px; color:red;}
+	h2{text-align: center; font-size: 40px; color:white;}
+	#button1{width: 200px; height: 40px; background-color:red; font-size: 24px; font-weight: bold; cursor: pointer; color: black;}
+	#button2{width: 200px; height: 40px; background-color:RoyalBlue; font-size: 24px; font-weight: bold; cursor: pointer; color: black;}
+	#container{text-align: center;}
+	</style>
+	<body>
+	<div id="resolution">
+	<br>
+	<h1><b>Quit Game</b></h1>
+	<br><br><br>
+	<h2><b>Are you sure?</b></h2>
+
+	<div id="container">
+	<button id="button1">No</button>
+	<button id="button2">Yes</button>
+	</div></div>
+	</body>
+	<script>
+
+	var bCtr = 0;
+	
+	function goTo() {
+		if (bCtr == 1){
+		window.location.href = "main.html";
+		}
+		else {
+		close();
+		}
+	}
+		
+	document.onkeydown = function onKeyDown(event){
+	switch (event.keyCode)
+	{
+		case 37: //left arrow
+			leftPressed = true;
+			document.getElementById("button1").style.backgroundColor = "red";
+			document.getElementById("button2").style.backgroundColor = "RoyalBlue";
+			bCtr = 1;
+			break;
+		case 39: //right arrow
+			rightPressed = true;
+			document.getElementById("button1").style.backgroundColor = "RoyalBlue";
+			document.getElementById("button2").style.backgroundColor = "red";
+			bCtr = 2;
+			break;
+		case 13:
+			enterPressed = true;
+			goTo();
+			break; 
+		
+	} 
+}
+	</script>
+</html>
+
+

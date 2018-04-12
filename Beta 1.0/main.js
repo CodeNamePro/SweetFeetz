@@ -155,12 +155,15 @@ function startGame(){
 			startButton.img = images[4];
 			levelButton.img = images[7];
 			quitButton.img = images [12];
+			if(enterPressed){
+				window.location.href = "levels.html";
+			}
 			break;
 		case(bCtr == 2):
 			quitButton.img = images[13];
 			levelButton.img = images[6];
 			if(enterPressed){
-				window.close();
+				window.location.href = "quit.html";
 			}
 			break;
 	}
@@ -215,6 +218,10 @@ function render(){
 		{
 			surface.drawImage(bullet.img, bulletArray[i].x, bulletArray[i].y, 8, 4);
 		}
+	}
+	//Game Over
+	function gameOver(){
+		surface.clearRect(0,0,canvas.width,canvas.height);
 	}
 }
 function startHit(){
@@ -434,6 +441,9 @@ function onKeyDown(event)
 		case 83://s
 			sPressed = true;
 			break;
+		case 80://p
+			pPressed = true;
+			break;
 		
 	} 
 }
@@ -476,6 +486,9 @@ function onKeyUp(event)
 			break;
 		case 83://s
 			sPressed = false;
+			break;
+		case 80://p
+			pPressed = false;
 			break;
 	}
 }
